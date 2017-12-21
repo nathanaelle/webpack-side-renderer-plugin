@@ -5,9 +5,9 @@ node_js:
   - "node"
 install:
   - yarn install -D
+  - yarn add webpack-subresource-integrity compression-webpack-plugin
 script:
   - yarn run test
 branches:
   except:
   - /poc-.*/
-  
