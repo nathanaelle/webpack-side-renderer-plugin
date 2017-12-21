@@ -1,6 +1,6 @@
 {
 	"name": "webpack-side-rendering-plugin",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "dist/wsr-plugin.js",
 	"description": "webpack plugin that render webpack side, contents that may normaly rendered server side",
 	"author": "Nathanaelle",

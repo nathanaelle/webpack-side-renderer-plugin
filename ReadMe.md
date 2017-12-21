@@ -1,5 +1,5 @@
 
-# WebPack Side Renderer Plugin
+# WebPack Side Rendering Plugin
 
 [![License](http://img.shields.io/badge/license-Simplified_BSD-blue.svg?style=flat)](LICENSE.txt) [![Build Status](https://travis-ci.org/nathanaelle/webpack-side-rendering-plugin.svg?branch=master)](https://travis-ci.org/nathanaelle/webpack-side-rendering-plugin)
 
@@ -7,7 +7,7 @@
 
 ```bash
 $ yarn add -D webpack
-$ yarn add -D webpack-side-renderer-plugin
+$ yarn add -D webpack-side-rendering-plugin
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ $ yarn add -D webpack-side-renderer-plugin
 ### webpack.config
 
 ```js
-import WebpackSideRenderer from 'webpack-side-renderer-plugin'
+import WebpackSideRendering from 'webpack-side-rendering-plugin'
 
 const config = {
 	entry: './index.js',
@@ -27,7 +27,7 @@ const config = {
 	},
 
 	plugins: [
-		new WebpackSideRenderer({
+		new WebpackSideRendering({
 			paths: [
 				'/hello/',
 				'/world/'
@@ -78,7 +78,7 @@ Note that this will still be executed for each entry in your `paths` array in yo
 
 ```ts
 
-export	interface IRendererOptions {
+export	interface IRenderingOptions {
 	// list of the available assets 
 	// IAssetsIndex is a hash of IAsset
 	assets: bc.IAssetsIndex
@@ -113,7 +113,7 @@ module.exports = {
   ...
 
   plugins: [
-    new WebpackSideRenderer({
+    new WebpackSideRendering({
       paths: [
         '/index.html',
         '/news.html',
@@ -167,7 +167,7 @@ This plugin defaults to the first chunk found. While this should work in most ca
 module.exports = {
   ...,
   plugins: [
-    new WebpackSideRenderer({
+    new WebpackSideRendering({
       entry: 'main'
     })
   ]
