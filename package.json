@@ -1,0 +1,67 @@
+{
+	"name": "webpack-side-rendering-plugin",
+	"version": "1.0.0",
+	"main": "dist/wsr-plugin.js",
+	"description": "pre render as html files with webpack",
+	"author": "Nathanaelle",
+	"license": "BSD-2-Clause",
+	"homepage": "https://github.com/nathanaelle/webpack-side-rendering-plugin",
+	"bugs":{
+		"url":"https://github.com/nathanaelle/webpack-side-rendering-plugin/issues"	
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nathanaelle/webpack-side-rendering-plugin"
+	},
+	"scripts": {
+		"dev": "NODE_ENV=development webpack -d -w --config ./webpack.config.ts --display-error-details",
+		"build": "NODE_ENV=production webpack --config ./webpack.config.ts",
+		"test": "NODE_ENV=production webpack --config ./webpack.config.ts && mocha",
+		"coverage": "NODE_ENV=production webpack --config ./webpack.config.ts && nyc mocha"
+	},
+	"dependencies": {
+		"jsdom": "^11.5.1"		
+	},
+	"devDependencies": {
+		"@types/chai": "^4.0.10",
+		"@types/jsdom": "^11.0.4",
+		"@types/mocha": "^2.2.44",
+		"@types/node": "8.x.x",
+		"@types/tapable": "*",
+		"@types/webpack": "3.x.x",
+		"@types/webpack-sources": "*",
+		"babel-core": "*",
+		"babel-loader": "*",
+		"babel-preset-env": "*",
+		"chai": "^4.1.2",
+		"compression-webpack-plugin": "^1.1.2",
+		"eslint": "^4.x.x",
+		"mocha": "^4.0.1",
+		"mocha-webpack": "^1.0.1",
+		"node-libs-browser": "*",
+		"nyc": "^11.3.0",
+		"source-map-support": "^0.5.0",
+		"ts-loader": "^3.2.0",
+		"ts-node": "^4.0.2",
+		"tslint": "^5.8.0",
+		"typescript": "^2.6.2",
+		"webpack": "3.x.x",
+		"webpack-sources": "*",
+		"webpack-stats-plugin": "^0.1.5",
+		"webpack-subresource-integrity": "^1.0.3"
+	},
+	"nyc": {
+		"extension": [
+			".ts",
+			".js"
+		],
+		"exclude": [
+			"**/*.d.ts"
+		],
+		"reporter": [
+			"html"
+		],
+		"cache": true,
+		"all": true
+	}
+}

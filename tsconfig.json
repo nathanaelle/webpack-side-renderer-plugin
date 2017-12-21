@@ -1,0 +1,19 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "none",
+		"moduleResolution": "node",
+		"pretty": true,
+		"newLine": "LF",
+		"allowSyntheticDefaultImports": false,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"noImplicitAny": false,
+		"noImplicitReturns": true,
+		"sourceMap": true,
+		"declaration": true
+	},
+	"exclude": [ "node_modules" ]
+}

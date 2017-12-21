@@ -1,0 +1,10 @@
+{
+	"editor.tabSize": 8,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"eslint.packageManager": "yarn",
+	"eslint.autoFixOnSave": true,
+	"tslint.enable": true,
+	"tslint.packageManager": "yarn",
+	"tslint.autoFixOnSave": true
+}

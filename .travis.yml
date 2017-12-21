@@ -1,0 +1,11 @@
+language: node_js
+cache: yarn
+node_js:
+  - "lts/*"
+  - "node"
+script:
+  - yarn run test
+branches:
+  except:
+  - /poc-.*/
+  
