@@ -2,7 +2,7 @@
 	"name": "webpack-side-rendering-plugin",
 	"version": "1.0.0",
 	"main": "dist/wsr-plugin.js",
-	"description": "pre render as html files with webpack",
+	"description": "webpack plugin that render webpack side, contents that may normaly rendered server side",
 	"author": "Nathanaelle",
 	"license": "BSD-2-Clause",
 	"homepage": "https://github.com/nathanaelle/webpack-side-rendering-plugin",
