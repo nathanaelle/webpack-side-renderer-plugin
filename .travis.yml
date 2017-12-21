@@ -3,6 +3,8 @@ cache: yarn
 node_js:
   - "lts/*"
   - "node"
+install:
+  - yarn install -D
 script:
   - yarn run test
 branches:
