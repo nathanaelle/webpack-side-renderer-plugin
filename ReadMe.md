@@ -1,7 +1,7 @@
 
 # WebPack Side Renderer Plugin
 
-[![License](http://img.shields.io/badge/license-Simplified_BSD-blue.svg?style=flat)](LICENSE.txt) [![Build Status](https://travis-ci.org/nathanaelle/webpack-side-renderer-plugin.svg?branch=master)](https://travis-ci.org/nathanaelle/webpack-side-renderer-plugin)
+[![License](http://img.shields.io/badge/license-Simplified_BSD-blue.svg?style=flat)](LICENSE.txt) [![Build Status](https://travis-ci.org/nathanaelle/webpack-side-rendering-plugin.svg?branch=master)](https://travis-ci.org/nathanaelle/webpack-side-rendering-plugin)
 
 ## Install
 
