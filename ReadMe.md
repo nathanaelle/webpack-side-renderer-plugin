@@ -6,8 +6,8 @@
 ## Install
 
 ```bash
-$ yarn add -D webpack
-$ yarn add -D webpack-side-rendering-plugin
+ ~$ yarn add -D webpack
+ ~$ yarn add -D webpack-side-rendering-plugin
 ```
 
 ## Usage
@@ -40,41 +40,57 @@ const config = {
 export default config
 ```
 
-### index.js
+### Plugin Options
+
+```ts
+
+export interface IOptions {
+	// remove an asset from webpack after the execution of this instance
+	dropAssets?: string[]|string
+
+	// name of the webpack entry where this instance will be applied
+	entry?:	string
+
+	// attributes from webpack's assets that will be exposed to this instance
+	exportAttrs?: string[]|string
+
+	// predefined list of paths for this instance.
+	// pathsFunc may complete the list
+	paths?: string[]|string
+
+	// name of the exported function that provide the list of paths for this instance
+	pathsFunc?: string|false
+
+	// publicPath of this instance
+	publicPrefix?: string
+}
+
+```
+
+
+### Renderer export
 
 Sync rendering:
 
 ```js
+
 export default (options) => {
-  return '<html>' + options.path + '</html>';
+	return '<html>' + options.path + '</html>';
 };
+
 ```
 
 Async rendering via promises:
 
 ```js
+
 export default (options) => {
-  return Promise.resolve('<html>' + options.path + '</html>');
+	return Promise.resolve('<html>' + options.path + '</html>');
 };
+
 ```
 
-## Multi rendering
-
-If you need to generate multiple files per render, or you need to alter the path, you can return an object instead of a string, where each key is the path, and the value is the file contents:
-
-```js
-export default (options) => {
-  return {
-    '/': '<html>Home</html>',
-    '/hello': '<html>Hello</html>',
-    '/world': '<html>World</html>'
-  };
-};
-```
-
-Note that this will still be executed for each entry in your `paths` array in your plugin config.
-
-## Default options
+### Default options for renderer
 
 ```ts
 
@@ -97,39 +113,30 @@ export interface IAsset {
 	[name: string]: any
 }
 
-
-
 ```
 
-Any additional locals provided in your config are also available.
 
-## Custom file names
+## Multi rendering
 
-By providing paths that end in `.html`, you can generate custom file names other than the default `index.html`. Please note that this may break compatibility with your router, if you're using one.
+If you need to generate multiple files per render, or you need to alter the path, you can return an object instead of a string, where each key is the path, and the value is the file contents:
 
 ```js
-module.exports = {
-
-  ...
-
-  plugins: [
-    new WebpackSideRendering({
-      paths: [
-        '/index.html',
-        '/news.html',
-        '/about.html'
-      ]
-    })
-  ]
+export default (options) => {
+	return {
+		'/': '<html>Home</html>',
+		'/hello': '<html>Hello</html>',
+		'/world': '<html>World</html>'
+	};
 };
 ```
+
+Note that this will still be executed for each entry in your `paths` array in your plugin config.
 
 
 ## React + Redux with multiple JS assets (commonChunks / vendor / manifest) support
 
-
-react.jsx
 ```jsx
+
 function bootstap() {
 	return	(
 		<App />
@@ -157,19 +164,5 @@ ${js}
 </body></html>`
 	)
 }
-```
 
-## Specifying entry
-
-This plugin defaults to the first chunk found. While this should work in most cases, you can specify the entry name if needed:
-
-```js
-module.exports = {
-  ...,
-  plugins: [
-    new WebpackSideRendering({
-      entry: 'main'
-    })
-  ]
-}
 ```
